@@ -157,22 +157,23 @@ body {
   margin: 0 10rem;
 }
 .ProjectTitle {
-  font-size: 3.7rem;
+  font-size: 4rem;
   font-weight: 500;
-  margin-bottom: 5rem;
+  margin-bottom: 2rem;
 }
 .Project {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
   justify-content: space-between;
-  margin: 0 4rem;
+  align-items: center;
+  padding: 0 2rem;
 }
 .PName {
-  font-size: 2.7rem;
+  font-size: 2rem;
   font-weight: 500;
   color: black;
-  margin-bottom: 6rem;
+  margin-bottom: 3rem;
 }
 .PBtn {
   border-radius: 3rem;
@@ -185,6 +186,27 @@ body {
   background-color: black;
   color: white;
 }
+.btnRing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  height: 8.3rem;
+  width: 8.3rem;
+}
+.planet {
+  display: none;
+  background-color: black;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  position: relative;
+  top: 5.2rem;
+  left: 3rem;
+  animation: planetSpin 5s linear infinite;
+}
+
 @media screen and (max-width: 1115px) {
   .head {
     margin: 0 5rem;
@@ -193,14 +215,8 @@ body {
     margin: 20% 5rem;
     padding: 2rem 0;
   }
-  .AboutBtn {
-    margin-bottom: 2rem;
-  }
   .ProjectSection {
     margin: 0 5rem;
-  }
-  .Project{
-    margin: 0 2rem;
   }
 }
 @media screen and (max-width: 899px) {
@@ -222,29 +238,8 @@ body {
     font-size: 1rem;
     max-width: 100%;
   }
-  .AboutBtn {
-    margin-bottom: 2rem;
-  }
   .Project {
-    margin: 0;
-  }
-}
-@media screen and (max-width: 810px){
-  .Project{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .PName{
-    margin: 0;
-  }
-  .PLeft {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 1rem;
+    padding: 0;
   }
 }
 @media screen and (max-width: 600px) {
@@ -267,13 +262,32 @@ body {
     font-size: 1rem;
     max-width: 100%;
   }
-  .AboutBtn {
-    padding: 0.8rem 1.5rem;
-    font-size: 16px;
-  }
   .scrollani,
   .scrollIndicator {
     display: none;
+  }
+  .ProjectSection {
+    margin: 0 2rem;
+  }
+  .Project {
+    flex-direction: column;
+  }
+  .ProjectTitle {
+    font-size: 3rem;
+  }
+  .PName {
+    margin: 0;
+    font-size: 1.7rem;
+  }
+  .PLeft {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .PBtn {
+    padding: 0.7rem 1rem;
   }
 }
 @keyframes moveAroundAxis {
@@ -311,5 +325,13 @@ body {
   100% {
     transform: translateY(0%);
     opacity: 1;
+  }
+}
+@keyframes planetSpin {
+ 0% {
+    transform: rotate(0deg) translate(67px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translate(67px) rotate(-360deg);
   }
 }
