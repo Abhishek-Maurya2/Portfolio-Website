@@ -1,0 +1,315 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Poppins, sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+body {
+  height: 100vh;
+  background-color: #f9f2ed;
+  cursor: none;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1000;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.3s;
+  mix-blend-mode: difference;
+}
+.ring1 {
+  position: fixed;
+  height: 400px;
+  width: 400px;
+  top: 25%;
+  left: 35%;
+  border: 1px solid #0000003a;
+  border-radius: 50%;
+  z-index: -1;
+  animation: moveAroundAxis 40s linear infinite, reveal 4s ease-in-out;
+}
+.ring2 {
+  position: fixed;
+  height: 700px;
+  width: 700px;
+  top: 30%;
+  left: 49%;
+  border: 1px solid #0000003a;
+  border-radius: 50%;
+  z-index: -1;
+  animation: moveAroundAxis 10s linear infinite, reveal 4s ease-in-out;
+}
+
+.head {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 7rem;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+.c,
+.c2 {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #f9f2ed;
+  border: 2px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.c2 {
+  width: 30px;
+  height: 30px;
+  border: none;
+}
+.c2:hover {
+  background-color: black;
+}
+
+/* Hero Texts */
+
+.heroText {
+  margin: 10rem 7rem;
+  padding: 2rem 4rem;
+  height: 60vh;
+}
+.NameP {
+  font-size: 3rem;
+  font-weight: 400;
+  color: black;
+  line-height: 2.5rem;
+  animation: slidein 1s forwards;
+}
+.IntroP {
+  font-size: 4.5rem;
+  font-weight: 500;
+  color: black;
+  opacity: 0;
+  animation: slidein 1s ease 0.8s forwards;
+}
+.DesP {
+  font-size: 1.2rem;
+  color: #000000;
+  margin-bottom: 1rem;
+  max-width: 75%;
+  opacity: 0;
+  animation: slidein 1s ease-in-out 1.5s forwards;
+}
+.AboutBtn {
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  background-color: black;
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 3rem;
+  opacity: 0;
+  animation: slidein 1s ease-out 2.3s forwards;
+}
+.scrollIndicator {
+  height: 4rem;
+  width: 2rem;
+  border-radius: 1rem;
+  border: solid 2px black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: slidein 2s ease;
+  animation: slidein 3s ease-in-out;
+}
+.scrollani {
+  height: 2rem;
+  width: 4px;
+  border-radius: 1rem;
+  background-color: black;
+  animation: scroll 1s linear infinite;
+}
+
+/* Projects Section */
+.ProjectSection {
+  margin: 0 10rem;
+}
+.ProjectTitle {
+  font-size: 3.7rem;
+  font-weight: 500;
+  margin-bottom: 5rem;
+}
+.Project {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 4rem;
+}
+.PName {
+  font-size: 2.7rem;
+  font-weight: 500;
+  color: black;
+  margin-bottom: 6rem;
+}
+.PBtn {
+  border-radius: 3rem;
+  border: solid 2px black;
+  padding: 2rem 1.2rem;
+  background: none;
+  transition: all 0.3s ease-in-out;
+}
+.PBtn:hover {
+  background-color: black;
+  color: white;
+}
+@media screen and (max-width: 1115px) {
+  .head {
+    margin: 0 5rem;
+  }
+  .heroText {
+    margin: 20% 5rem;
+    padding: 2rem 0;
+  }
+  .AboutBtn {
+    margin-bottom: 2rem;
+  }
+  .ProjectSection {
+    margin: 0 5rem;
+  }
+  .Project{
+    margin: 0 2rem;
+  }
+}
+@media screen and (max-width: 899px) {
+  .head {
+    margin: 0 4rem;
+  }
+  .heroText {
+    margin: 30% inherit;
+    padding: 2rem 0;
+  }
+  .NameP {
+    font-size: 2rem;
+  }
+  .IntroP {
+    font-size: 3rem;
+  }
+  .DesP {
+    margin-top: 10px;
+    font-size: 1rem;
+    max-width: 100%;
+  }
+  .AboutBtn {
+    margin-bottom: 2rem;
+  }
+  .Project {
+    margin: 0;
+  }
+}
+@media screen and (max-width: 810px){
+  .Project{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .PName{
+    margin: 0;
+  }
+  .PLeft {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  .head {
+    margin: 0 2rem;
+  }
+  .heroText {
+    margin: 40% 2rem;
+    padding: 2rem 0;
+  }
+  .NameP {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  .IntroP {
+    font-size: 1.8rem;
+  }
+  .DesP {
+    margin-top: 10px;
+    font-size: 1rem;
+    max-width: 100%;
+  }
+  .AboutBtn {
+    padding: 0.8rem 1.5rem;
+    font-size: 16px;
+  }
+  .scrollani,
+  .scrollIndicator {
+    display: none;
+  }
+}
+@keyframes moveAroundAxis {
+  0% {
+    transform: rotate(0deg) translate(40px);
+  }
+  100% {
+    transform: rotate(360deg) translate(20px);
+  }
+}
+@keyframes reveal {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes scroll {
+  0% {
+    transform: translateY(-30px) scaleY(0.1);
+  }
+  50% {
+    transform: translateY(0px) scaleY(0.7);
+  }
+  100% {
+    transform: translateY(30px) scaleY(0.1);
+  }
+}
+@keyframes slidein {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
