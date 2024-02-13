@@ -5,18 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Abhishek</title>
     <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
   </head>
   <body>
     <div class="cursor" data-cursor></div>
-    <div class="ring1"></div>
-    <div class="ring2"></div>
+
     <div class="head">
       <div class="c">
         <div class="c2"></div>
       </div>
       <p>Menu</p>
     </div>
-    <div class="heroText">
+    <div class="heroText rellax" data-rellax-speed="25">
+      <div class="ring1"></div>
+      <div class="ring2"></div>
       <p class="NameP">Hi, I'm Abhishek</p>
       <p class="IntroP">I turn Pixels to Reality</p>
       <p class="DesP">
@@ -29,20 +34,58 @@
       </div>
     </div>
     <section class="ProjectSection">
-      <p class="ProjectTitle">Projects</p>
+      <p class="ProjectTitle rellax" data-rellax-speed="10">Projects</p>
       <div class="Project">
         <div class="PLeft">
-          <p class="PName">Project Name</p>
-          <div class="planet"></div>
-          <div class="btnRing">
-            <button class="PBtn">Explore</button>
+          <p class="PName rellax" data-rellax-speed="10">Project Name</p>
+          <div class="BtnBox rellax" data-rellax-speed="11">
+            <div class="planet"></div>
+            <div class="btnRing">
+              <button class="PBtn">Explore</button>
+            </div>
           </div>
         </div>
-        <div class="PRight">
-          <img src="https://via.placeholder.com/350x550" alt="" />
+        <div class="PRight rellax" data-rellax-speed="14">
+          <img src="https://via.placeholder.com/450x700" alt="" />
         </div>
       </div>
     </section>
+    <div class="MoreProjects rellax" data-rellax-speed="5">
+      <p class="MoreTitle rellax" data-rellax-speed="1">More Projects</p>
+      <div class="MoreP rellax" data-rellax-speed="1">
+        <div class="MoreProject">
+          <p class="MoreName">Project 1</p>
+          <button class="MoreBtn">
+            <span class="material-symbols-outlined"> east </span>
+          </button>
+        </div>
+        <div class="MoreProject">
+          <p class="MoreName">Project 2</p>
+          <button class="MoreBtn">
+            <span class="material-symbols-outlined"> east </span>
+          </button>
+        </div>
+        <div class="MoreProject">
+          <p class="MoreName">Project 3</p>
+          <button class="MoreBtn">
+            <span class="material-symbols-outlined"> east </span>
+          </button>
+        </div>
+        <div class="MoreProject">
+          <p class="MoreName">Project 4</p>
+          <button class="MoreBtn">
+            <span class="material-symbols-outlined"> east </span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p>Turning Login into Pixels.</p>
+      <p>Developed by Abhishek Kumar Maurya</p>
+    </footer>
     <script src="index.js"></script>
+    <script src="projext.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
+    <script src="parallax.js"></script>
   </body>
 </html>

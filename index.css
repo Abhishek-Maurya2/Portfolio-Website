@@ -9,15 +9,16 @@
 html {
   scroll-behavior: smooth;
 }
-::-webkit-scrollbar {
-  display: none;
-}
+
+/* body */
+
 body {
   height: 100vh;
   background-color: #f9f2ed;
   cursor: none;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+  overflow-x: hidden;
 }
 .cursor {
   position: fixed;
@@ -28,7 +29,7 @@ body {
   background-color: white;
   border-radius: 50%;
   pointer-events: none;
-  z-index: 1000;
+  z-index: 10000;
   pointer-events: none;
   transform: translate(-50%, -50%);
   transition: transform 0.3s;
@@ -38,7 +39,7 @@ body {
   position: fixed;
   height: 400px;
   width: 400px;
-  top: 25%;
+  top: 15%;
   left: 35%;
   border: 1px solid #0000003a;
   border-radius: 50%;
@@ -49,26 +50,12 @@ body {
   position: fixed;
   height: 700px;
   width: 700px;
-  top: 30%;
+  top: 28%;
   left: 49%;
   border: 1px solid #0000003a;
   border-radius: 50%;
   z-index: -1;
   animation: moveAroundAxis 10s linear infinite, reveal 4s ease-in-out;
-}
-
-.head {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 10vh;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 0 7rem;
-  z-index: 1000;
-  backdrop-filter: blur(4px);
 }
 .c,
 .c2 {
@@ -88,6 +75,19 @@ body {
 }
 .c2:hover {
   background-color: black;
+}
+.head {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 7rem;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
 }
 
 /* Hero Texts */
@@ -159,7 +159,7 @@ body {
 .ProjectTitle {
   font-size: 4rem;
   font-weight: 500;
-  margin-bottom: 2rem;
+  margin-bottom: 0rem;
 }
 .Project {
   display: flex;
@@ -173,7 +173,6 @@ body {
   font-size: 2rem;
   font-weight: 500;
   color: black;
-  margin-bottom: 3rem;
 }
 .PBtn {
   border-radius: 3rem;
@@ -207,6 +206,63 @@ body {
   animation: planetSpin 5s linear infinite;
 }
 
+/* parallax */
+
+.animate {
+  animation: fades 2s ease-in forwards;
+}
+
+.MoreProjects {
+  margin: 0 10rem;
+  height: 5vh;
+}
+.MoreTitle {
+  font-size: 4rem;
+  font-weight: 500;
+}
+.MoreProject {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: solid 1px rgba(45, 45, 45, 0.2);
+  padding: 1rem 0;
+}
+.MoreProject:hover {
+  transition: all 0.3s ease-in-out;
+}
+.MoreName {
+  font-size: 2.3rem;
+  font-weight: 400;
+  color: black;
+}
+.MoreBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: black;
+  color: #f9f2ed;
+  border: none;
+}
+.MoreBtn span {
+  padding: 1rem;
+}
+.MoreBtn span:hover {
+  animation: scrollX 1s ease-in-out;
+}
+footer {
+  padding: 0 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 10vh;
+  border-top: solid 1px rgba(45, 45, 45, 0.2);
+}
+footer p {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 20px;
+}
 @media screen and (max-width: 1115px) {
   .head {
     margin: 0 5rem;
@@ -289,6 +345,13 @@ body {
   .PBtn {
     padding: 0.7rem 1rem;
   }
+  .btnRing {
+    height: 80px;
+    width: 80px;
+  }
+  .planet {
+    background: none;
+  }
 }
 @keyframes moveAroundAxis {
   0% {
@@ -304,6 +367,17 @@ body {
   }
   100% {
     transform: scale(1);
+  }
+}
+@keyframes scrollX {
+  0% {
+    transform: translateX(-30px);
+  }
+  50% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(30px);
   }
 }
 @keyframes scroll {
@@ -328,10 +402,20 @@ body {
   }
 }
 @keyframes planetSpin {
- 0% {
+  0% {
     transform: rotate(0deg) translate(67px) rotate(0deg);
   }
   100% {
     transform: rotate(360deg) translate(67px) rotate(-360deg);
+  }
+}
+@keyframes fades {
+  0% {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
   }
 }
