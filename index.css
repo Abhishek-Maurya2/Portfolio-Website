@@ -6,6 +6,16 @@
   box-sizing: border-box;
   font-family: Poppins, sans-serif;
 }
+
+
+:root {
+  --bgColor: #f9f2ed;
+  --txtColor: black;
+  --txtLight: rgba(0, 0, 0, 0.5);
+  --btnColor: black;
+}
+/* dark mode root */
+
 html {
   scroll-behavior: smooth;
 }
@@ -352,6 +362,17 @@ footer p {
   .planet {
     background: none;
   }
+  .MoreProjects {
+    margin: 0 1rem;
+  }
+  footer {
+    padding: 0 1rem;
+  }
+  footer p {
+    font-size: 12px;
+
+  }
+
 }
 @keyframes moveAroundAxis {
   0% {
